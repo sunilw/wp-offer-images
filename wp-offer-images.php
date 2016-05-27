@@ -21,6 +21,20 @@
  */
 
 
+/**
+* create a custom image size
+*/
+add_image_size('han-preview-size', '600',   '600',  false  ) ;
+
+/**
+* load our stylesheet
+*/
+
+
+
+/**
+* include the loop that publishes our grid
+*/
 function dra_media_gallery() {
     $html = include("templates/press-gallery.php") ;  
     echo $html ; 
