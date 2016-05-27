@@ -20,6 +20,7 @@
    GNU General Public License for more details.
  */
 
+define( "WPOFFER_PLUGINDIRURI",  plugin_dir_url(__FILE__) ) ;
 
 /**
 * create a custom image size
@@ -29,7 +30,10 @@ add_image_size('han-preview-size', '600',   '600',  false  ) ;
 /**
 * load our stylesheet
 */
-
+add_action('wp_enqueue_scripts', 'load_offer_images_styles') ;
+function load_offer_images_styles() {
+    wp_enqueue_style('load-offer-styles', WPOFFER_PLUGINDIRURI . "/css/wp-offer.css") ;
+}
 
 
 /**
