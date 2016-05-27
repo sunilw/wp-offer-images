@@ -1,7 +1,7 @@
 <?php
 $args = array(
     'post_type' => 'press-images',
-    'posts_per_page' => 8
+    'posts_per_page' => -1
 ) ;
 $my_query = new WP_Query($args) ;
 if ($my_query->have_posts()) :
@@ -17,11 +17,8 @@ $remaining = $post_count ;
             $oddeven = "even" ;
         } else {
             $oddeven = "odd";
-        }
-        ?>
-
+        }        ?>
             <div class="image-row clearfix">
-
                 <div class="preview-image-container <?php echo $oddeven  ?>"
                      data-remaining-posts="<?php echo $remaining  ?>"
                      data-total-posts="<?php echo $post_count  ?>"
@@ -35,8 +32,8 @@ $remaining = $post_count ;
                         </div>
                     </div>
                 </div> <!-- ENDS .preview-image-container -->
-                <?php $remaining--  ?>
-                <?php
+                <?php 
+		$remaining-- ; 
                 if ( $oddeven == "even"  || $remaining = "0" ) { ?>
 
             </div>  <!-- ENDS .image-row -->
@@ -44,5 +41,6 @@ $remaining = $post_count ;
                 <?php  } ?>
 		
         <?php endwhile; ?>
-    </section> <!-- ENDS #...  -->
+    </section> <!-- ENDS #dra-press-gallery  -->
 <?php endif; ?>
+<?php return ;  ?>

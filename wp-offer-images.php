@@ -40,9 +40,9 @@ function load_offer_images_styles() {
 * include the loop that publishes our grid
 */
 function dra_media_gallery() {
-    $html = include("templates/press-gallery.php") ;  
-    echo $html ; 
-    return ;
+    ob_start();
+    include("templates/press-gallery.php") ;  
+    return ob_get_clean();
 }
 
 add_shortcode('dra-media-gallery', 'dra_media_gallery'  ) ;
