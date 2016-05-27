@@ -6,7 +6,6 @@
     margin-right: auto ;    
     width: 98% ;
     max-width: 1000px ;
-    border: 1px solid #fff ;
 }
 
 #dra-press-gallery .preview-image-container {
@@ -37,13 +36,16 @@
 }
 
 
-
 @media screen and (min-width: 768px ) {
     
     #dra-press-gallery .preview-image-container  {
 	width: 48% ;
-	height: 330px
     }
+
+    #dra-press-gallery .preview-image-container img {
+	width: 100% ;
+    }
+
     #dra-press-gallery .preview-image-container.odd {
 	float: left ;
     }
